@@ -1,0 +1,1 @@
+ SELECT AVG(songs.energy) FROm songs JOIn artists ON songs.artist_id = artists.id WHERE artists.name = "Drake";

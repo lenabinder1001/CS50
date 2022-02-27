@@ -1,0 +1,1 @@
+SELECT songs.name FROm songs Join artists ON songs.artist_id = artists.id WHERE artists.name = "Post Malone";
