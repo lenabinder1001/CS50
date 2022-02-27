@@ -1,0 +1,32 @@
+{% extends "layout.html"%}
+
+{% block main %}
+    <div class="edit-banner">
+        <h1>Edit "{{ spending }}"</h1>
+        <p>Change name, amount or category of spending.</p>
+    </div>
+    <div class="formular">
+        <form action="/edit_spending/{{ id }}" method="post">
+            <div class="form-name">
+                <label for="name">Change name of spending:</label><br>
+                <input autocomplete="off" autofocus class="form-control w-auto" id="name" name="name" placeholder="{{ spending }}" type="text">
+            </div>
+            <div class="form-amount">
+                <label for="name">Change amount of spending:</label><br>
+                <input autocomplete="off" autofocus class="form-control w-auto" id="amount" name="amount" placeholder="{{ amount }}" type="text">
+            </div>
+            <div class="form-category">
+                <label for="name">Change category of spending:</label><br>
+                <select name="category">
+                    <option disabled selected value="">Category</option>
+                    {% for category in categories %}
+                        <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="button-edit">
+                <button type="submit">Change spending</button>
+            </div>
+        </form>
+    </div>
+{% endblock%}

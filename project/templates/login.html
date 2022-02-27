@@ -1,0 +1,21 @@
+{% extends "layout.html"%}
+
+{% block main %}
+    <h2>Welcome back!</h2>
+    <div class="formular-login">
+        <form action="/login" method="post">
+            <div class="login-name">
+                <label for="name">Enter username:</label><br>
+                <input autocomplete="off" autofocus class="form-control w-auto" id="username" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="login-pw">
+                <label for="name">Enter password:</label><br>
+                <input class="form-control w-auto" id="password" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="button-login">
+                <button type="submit">Log In</button>
+            </div>
+        </form>
+        <a href="/register">No account?</a>
+    </div>
+{% endblock%}
